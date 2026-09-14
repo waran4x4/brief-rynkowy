@@ -4,102 +4,52 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brief Rynkowy</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
-    --bg: #f3f5f8;
-    --surface: #ffffff;
-    --surface-2: #e9edf2;
-    --ink: #17202a;
-    --ink-2: #56626f;
-    --ink-3: #8a95a1;
-    --line: #d9dfe6;
-    --line-2: #c5cdd6;
-    --accent: #2b62c4;
-    --accent-ink: #ffffff;
-    --gold: #9a6a0a;
-    --gold-soft: #f6ecd2;
-    --nq-soft: #e1ebfb;
-    --long: #1e7f57;
-    --long-soft: #dcf2e6;
-    --short: #b8362a;
-    --short-soft: #f9e1dd;
-    --neutral: #5f6b78;
-    --neutral-soft: #e6eaee;
-    --focus: #2b62c4;
-    --shadow: 0 1px 2px rgba(23, 32, 42, 0.06), 0 6px 18px rgba(23, 32, 42, 0.05);
-    --font-display: "Archivo Narrow", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
-    --font-body: "Source Sans 3", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-data: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    color-scheme: light;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #10141a;
-      --surface: #181e26;
-      --surface-2: #1f2730;
-      --ink: #e7ebf0;
-      --ink-2: #a3aeba;
-      --ink-3: #6f7b88;
-      --line: #2a333e;
-      --line-2: #36414d;
-      --accent: #78a6f0;
-      --accent-ink: #0f1520;
-      --gold: #e2b657;
-      --gold-soft: #2c2413;
-      --nq-soft: #1a2740;
-      --long: #47c48e;
-      --long-soft: #10281d;
-      --short: #f3806f;
-      --short-soft: #331a17;
-      --neutral: #9aa6b2;
-      --neutral-soft: #232b34;
-      --focus: #78a6f0;
-      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.28);
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #10141a;
-    --surface: #181e26;
-    --surface-2: #1f2730;
-    --ink: #e7ebf0;
-    --ink-2: #a3aeba;
-    --ink-3: #6f7b88;
-    --line: #2a333e;
-    --line-2: #36414d;
-    --accent: #78a6f0;
-    --accent-ink: #0f1520;
-    --gold: #e2b657;
-    --gold-soft: #2c2413;
-    --nq-soft: #1a2740;
-    --long: #47c48e;
-    --long-soft: #10281d;
-    --short: #f3806f;
-    --short-soft: #331a17;
-    --neutral: #9aa6b2;
-    --neutral-soft: #232b34;
-    --focus: #78a6f0;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.28);
     color-scheme: dark;
+    --ground: #0b0e13;
+    --panel: #121821;
+    --panel-2: #182029;
+    --line: #243040;
+    --line-2: #31404f;
+    --ink: #e6edf3;
+    --ink-2: #9db0c2;
+    --ink-3: #67788a;
+    --accent: #5aa9ff;
+    --accent-soft: rgba(90, 169, 255, 0.14);
+    --gold: #e6b84f;
+    --gold-soft: rgba(230, 184, 79, 0.14);
+    --long: #35d07f;
+    --long-soft: rgba(53, 208, 127, 0.14);
+    --short: #ff5f6d;
+    --short-soft: rgba(255, 95, 109, 0.14);
+    --neutral: #8b9bb0;
+    --neutral-soft: rgba(139, 155, 176, 0.16);
+    --focus: #5aa9ff;
+    --font-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "IBM Plex Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-data: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   }
 
   * { box-sizing: border-box; }
+  html { background: var(--ground); }
   body {
     margin: 0;
-    background: var(--bg);
+    background: var(--ground);
     color: var(--ink);
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--accent); }
+  a { color: var(--accent); text-decoration-color: rgba(90, 169, 255, 0.45); }
+  a:hover { text-decoration-color: var(--accent); }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   .wrap {
-    max-width: 1180px;
+    max-width: 1240px;
     margin: 0 auto;
-    padding-block: 28px 56px;
+    padding-block: 22px 56px;
     padding-inline: 20px;
   }
 
@@ -109,38 +59,43 @@
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 12px 24px;
-    padding-bottom: 18px;
-    border-bottom: 2px solid var(--ink);
+    gap: 10px 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line-2);
   }
   .masthead h1 {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: clamp(30px, 4.5vw, 40px);
+    font-size: clamp(28px, 4vw, 38px);
     line-height: 1;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     margin: 0;
     text-wrap: balance;
   }
+  .masthead h1 span { color: var(--accent); }
   .masthead .sub {
-    margin: 6px 0 0;
+    margin: 8px 0 0;
     color: var(--ink-2);
-    font-size: 15px;
+    font-family: var(--font-data);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
   }
-  .masthead .sub strong { color: var(--ink); font-weight: 600; }
+  .masthead .sub strong { color: var(--ink); font-weight: 500; }
   .datebox {
     text-align: right;
     font-family: var(--font-data);
-    font-size: 13px;
+    font-size: 12.5px;
     color: var(--ink-2);
     line-height: 1.5;
+    max-width: 52ch;
   }
-  .datebox b { display: block; color: var(--ink); font-weight: 600; font-size: 15px; }
+  .datebox b { display: block; color: var(--ink); font-weight: 600; font-size: 14px; }
 
   /* Status strip */
   .status {
     list-style: none;
-    margin: 16px 0 0;
+    margin: 14px 0 0;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -150,26 +105,25 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 12px;
-    background: var(--surface);
+    padding: 8px 12px;
+    background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 6px;
+    border-radius: 4px;
     min-width: 0;
   }
   .status .dot {
     flex: none;
-    width: 10px; height: 10px;
-    border-radius: 50%;
+    width: 8px; height: 8px;
+    border-radius: 2px;
     background: var(--line-2);
-    box-shadow: inset 0 0 0 2px var(--surface);
   }
-  .status li.done .dot { background: var(--long); }
+  .status li.done .dot { background: var(--long); box-shadow: 0 0 8px rgba(53, 208, 127, 0.55); }
   .status li.skipped .dot { background: var(--ink-3); }
   .status .st-k {
     font-family: var(--font-display);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 13px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink-2);
     white-space: nowrap;
@@ -177,7 +131,7 @@
   .status .st-v {
     margin-left: auto;
     font-family: var(--font-data);
-    font-size: 12.5px;
+    font-size: 12px;
     color: var(--ink-3);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -185,78 +139,186 @@
   }
   .status li.done .st-v { color: var(--ink); }
 
+  /* Cockpit */
+  .cockpit {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .tile {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--neutral);
+    border-radius: 4px;
+    padding: 12px 14px 12px;
+    min-width: 0;
+  }
+  .tile.long { border-left-color: var(--long); }
+  .tile.short { border-left-color: var(--short); }
+  .tile.neutral { border-left-color: var(--neutral); }
+  .tile .t-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 12px;
+  }
+  .tile .t-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .tile .t-sub { font-family: var(--font-data); font-size: 11.5px; color: var(--ink-3); }
+  .tile .t-profile { margin-left: auto; font-family: var(--font-data); font-size: 11.5px; color: var(--ink-2); }
+  .tile .t-now {
+    margin: 8px 0 10px;
+    font-family: var(--font-data);
+    font-weight: 600;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  .tile .t-now small { font-size: 12px; font-weight: 400; color: var(--ink-3); margin-left: 8px; letter-spacing: 0; }
+  .tile .t-levels {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px 10px;
+    margin: 0;
+    padding: 10px 0 0;
+    border-top: 1px dashed var(--line);
+  }
+  .tile .t-levels div { min-width: 0; }
+  .tile .t-levels dt {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .tile .t-levels dd {
+    margin: 0;
+    font-family: var(--font-data);
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .tile .t-levels dd.muted { color: var(--ink-3); }
+
+  /* Direction badge (shared by cards and cockpit) */
+  .dir {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 10px 3px 8px;
+    border-radius: 3px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--neutral-soft);
+    color: var(--neutral);
+    border: 1px solid transparent;
+  }
+  .dir::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: currentColor; }
+  .dir.dir-long { background: var(--long-soft); color: var(--long); border-color: rgba(53, 208, 127, 0.35); }
+  .dir.dir-short { background: var(--short-soft); color: var(--short); border-color: rgba(255, 95, 109, 0.35); }
+  .dir.dir-neutral { background: var(--neutral-soft); color: var(--neutral); border-color: rgba(139, 155, 176, 0.35); }
+  .profile {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid var(--line-2);
+    font-family: var(--font-data);
+    font-size: 12px;
+    color: var(--ink-2);
+  }
+
   /* Grid */
   .grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 340px;
-    gap: 22px 28px;
-    margin-top: 24px;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 18px 22px;
+    margin-top: 18px;
     align-items: start;
   }
-  .main, .rail { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+  .main, .rail { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
 
   /* Sections */
   section.card {
-    background: var(--surface);
+    background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    padding: 18px 22px 20px;
+    border-radius: 4px;
+    padding: 16px 20px 18px;
   }
   section.card > header {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 8px 14px;
+    gap: 6px 14px;
     margin-bottom: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     border-bottom: 1px solid var(--line);
   }
   section.card h2 {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 21px;
-    line-height: 1.15;
+    font-size: 22px;
+    line-height: 1.1;
     margin: 0;
-    letter-spacing: 0.005em;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
   }
   .eyebrow {
     font-family: var(--font-display);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 12px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-3);
   }
   section.card .meta {
     margin-left: auto;
     font-family: var(--font-data);
-    font-size: 12px;
+    font-size: 11.5px;
     color: var(--ink-3);
   }
-  .body { max-width: 70ch; }
+  .body { max-width: 74ch; }
   .body p { margin: 0 0 10px; }
   .body p:last-child { margin-bottom: 0; }
   .body ul, .body ol { margin: 0 0 10px; padding-left: 1.2em; }
   .body li { margin: 0 0 6px; }
+  .body li::marker { color: var(--ink-3); }
   .body li:last-child { margin-bottom: 0; }
   .body h3 {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.04em;
+    font-size: 14px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink-2);
-    margin: 14px 0 6px;
+    margin: 16px 0 6px;
+    padding-left: 10px;
+    border-left: 2px solid var(--line-2);
+    line-height: 1.2;
   }
   .body h3:first-child { margin-top: 0; }
   .body .empty { color: var(--ink-3); font-style: italic; }
-  .body .src { font-size: 13.5px; color: var(--ink-3); }
-  .body strong { font-weight: 600; }
+  .body .src { font-size: 12.5px; color: var(--ink-3); font-family: var(--font-data); line-height: 1.5; }
+  .body strong { font-weight: 600; color: var(--ink); }
+  .body em { color: var(--ink-2); }
   .body table.kv {
     border-collapse: collapse;
     width: 100%;
-    font-size: 15px;
+    font-size: 13.5px;
     margin: 4px 0 10px;
   }
   .body table.kv th, .body table.kv td {
@@ -265,10 +327,18 @@
     border-bottom: 1px solid var(--line);
     vertical-align: top;
   }
-  .body table.kv th { color: var(--ink-2); font-weight: 600; white-space: nowrap; }
+  .body table.kv th {
+    color: var(--ink-3);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
   .body table.kv td.num, .body table.kv th.num {
     font-family: var(--font-data);
-    font-size: 13.5px;
+    font-size: 12.5px;
     font-variant-numeric: tabular-nums;
     text-align: right;
     white-space: nowrap;
@@ -276,55 +346,29 @@
   .body .tablewrap { overflow-x: auto; }
 
   /* Bias sections */
-  section.bias { border-top: 4px solid var(--accent); }
+  section.bias { border-top: 3px solid var(--accent); }
   section.bias.xau { border-top-color: var(--gold); }
-  .dir {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 12px 4px 10px;
-    border-radius: 999px;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    background: var(--neutral-soft);
-    color: var(--neutral);
-  }
-  .dir::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
-  .dir.dir-long { background: var(--long-soft); color: var(--long); }
-  .dir.dir-short { background: var(--short-soft); color: var(--short); }
-  .dir.dir-neutral { background: var(--neutral-soft); color: var(--neutral); }
-  .profile {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 4px;
-    border: 1px solid var(--line-2);
-    font-family: var(--font-data);
-    font-size: 12.5px;
-    color: var(--ink-2);
-  }
 
   /* Rail */
-  .rail section.card { padding: 16px 18px 18px; }
-  .rail h2 { font-size: 17px; }
+  .rail section.card { padding: 14px 16px 16px; }
+  .rail h2 { font-size: 18px; }
   table.levels {
     width: 100%;
     border-collapse: collapse;
-    font-size: 14.5px;
+    font-size: 13.5px;
   }
   table.levels th, table.levels td {
-    padding: 6px 0;
+    padding: 5px 0;
     border-bottom: 1px solid var(--line);
     text-align: left;
   }
-  table.levels th { font-weight: 600; color: var(--ink-2); }
+  table.levels th { font-weight: 500; color: var(--ink-2); }
   table.levels td.num {
     font-family: var(--font-data);
     font-variant-numeric: tabular-nums;
     text-align: right;
-    font-size: 13.5px;
+    font-size: 13px;
+    color: var(--ink);
   }
   table.levels tr.group td, table.levels tr.group th {
     padding-top: 12px;
@@ -333,11 +377,47 @@
   table.levels tr.group th {
     font-family: var(--font-display);
     font-size: 12px;
-    letter-spacing: 0.08em;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--ink-3);
   }
-  .note { font-size: 13px; color: var(--ink-3); margin: 10px 0 0; }
+  .note { font-size: 12px; color: var(--ink-3); margin: 10px 0 0; font-family: var(--font-data); line-height: 1.5; }
+
+  .shots { display: flex; flex-direction: column; gap: 12px; }
+  figure.shot { margin: 0; }
+  figure.shot img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--line-2);
+    border-radius: 3px;
+    background: var(--ground);
+  }
+  figure.shot .ph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+    border: 1px dashed var(--line-2);
+    border-radius: 3px;
+    color: var(--ink-3);
+    font-family: var(--font-data);
+    font-size: 12px;
+    text-align: center;
+    padding: 12px;
+    background: repeating-linear-gradient(0deg, transparent 0 23px, rgba(49, 64, 79, 0.35) 23px 24px);
+  }
+  figure.shot img:not([hidden]) ~ .ph { display: none; }
+  figure.shot figcaption {
+    margin-top: 6px;
+    font-family: var(--font-data);
+    font-size: 11.5px;
+    color: var(--ink-3);
+  }
+  figure.shot figcaption b { color: var(--ink-2); font-weight: 500; }
 
   .clock { list-style: none; margin: 0; padding: 0; }
   .clock li {
@@ -346,339 +426,405 @@
     gap: 10px;
     padding: 5px 0;
     border-bottom: 1px dashed var(--line);
-    font-size: 14.5px;
+    font-size: 13.5px;
   }
   .clock li:last-child { border-bottom: 0; }
-  .clock .t { font-family: var(--font-data); font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .clock .t { font-family: var(--font-data); font-size: 12.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
   .clock li.key .t { color: var(--accent); font-weight: 600; }
-  .clock li.key { font-weight: 600; }
+  .clock li.key { font-weight: 500; }
 
   footer.foot {
-    margin-top: 28px;
-    padding-top: 14px;
+    margin-top: 26px;
+    padding-top: 12px;
     border-top: 1px solid var(--line);
-    font-size: 13px;
+    font-size: 12px;
     color: var(--ink-3);
     display: flex;
     flex-wrap: wrap;
     gap: 6px 24px;
     justify-content: space-between;
+    font-family: var(--font-data);
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 960px) {
     .grid { grid-template-columns: minmax(0, 1fr); }
     .status { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .datebox { text-align: left; }
+    .datebox { text-align: left; max-width: none; }
+  }
+  @media (max-width: 640px) {
+    .cockpit { grid-template-columns: minmax(0, 1fr); }
+    .tile .t-levels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width: 480px) {
-    .wrap { padding-inline: 16px; padding-block: 20px 40px; }
+    .wrap { padding-inline: 16px; padding-block: 16px 40px; }
     .status { grid-template-columns: minmax(0, 1fr); }
-    section.card { padding: 16px 16px 18px; }
+    section.card { padding: 14px 14px 16px; }
   }
   @media (prefers-reduced-motion: no-preference) {
     .status li { transition: border-color 200ms ease; }
   }
 </style>
 
-
 </head>
 <body>
-<div id="brief" class="wrap" data-brief-date="2026-09-13" data-ny-update="" data-x-update="" data-tv-levels="">
-
-  <header class="masthead">
-    <div>
-      <h1>Brief rynkowy</h1>
-      <p class="sub">NQ (futures) · XAUUSD · Polska + USA · <strong>czas polski</strong> · bias jako analiza, nie rekomendacja</p>
-    </div>
-    <div class="datebox">
-      <b id="brief-date">niedziela, 13 września 2026 — plan na tydzień 14–18.09</b>
-      <span id="brief-weekday">Wydanie niedzielne · bias na poniedziałek (dzień 1/5) · profil tygodnia: fake Monday / Tuesday low (prior), FOMC w środę 20:00</span>
-    </div>
-  </header>
-
-  <ul class="status" aria-label="Etapy dzisiejszej aktualizacji">
-    <li id="st-brief" class="done"><span class="dot"></span><span class="st-k">Brief 8:00</span><span class="st-v">23:58 (nd.)</span></li>
-    <li id="st-ny" class="pending"><span class="dot"></span><span class="st-k">Update 15:00</span><span class="st-v">czeka</span></li>
-    <li id="st-x" class="pending"><span class="dot"></span><span class="st-k">Z X</span><span class="st-v">czeka</span></li>
-    <li id="st-tv" class="pending"><span class="dot"></span><span class="st-k">TradingView</span><span class="st-v">czeka</span></li>
-  </ul>
-
-  <div class="grid">
-    <div class="main">
-
-      <section class="card bias nq" id="nq">
-        <header>
-          <span class="eyebrow">E-mini Nasdaq 100 · NQ</span>
-          <h2>Bias NQ</h2>
-          <span id="nq-dir" class="dir dir-long">LONG</span>
-          <span id="nq-profile" class="profile">profil NY: continuation</span>
-          <span class="meta" id="nq-meta">NQ=F 29 387,00 o 22:59 PL (zamkn. pt.) · kontrakt wrzesień 2026 (NQU26)</span>
-        </header>
-        <div class="body" id="nq-body">
-          <p><strong>Wydanie niedzielne — bias na poniedziałek 14.09.</strong> Yahoo pokazuje piątkowe zamknięcie (11.09, 22:59 PL); Globex rusza o 00:00 PL. Kontrakt wrześniowy NQU26 wygasa w piątek 18.09 — jeśli grasz na NQZ26, dolicz spread między kontraktami z własnej platformy do wszystkich poziomów poniżej.</p>
-          <h3>Kontekst tygodniowy</h3>
-          <p>Tydzień 7–11.09: NQ −0,5% (Nasdaq Composite −0,7%, Dow −1,6%, Russell −2,4%), miesiąc −1,5%. Cztery dni spadków przerwał piątek: open 29 141, dołek 29 040,5 (raid pod czwartkowe zamknięcie 29 135,25), szczyt 29 499,5, close 29 387 (+251,75, +0,86%) — dzienna świeca odwrócenia z zamknięciem w górnej ćwiartce zakresu (mid 29 270). Katalizatory: CPI 3,4% r/r zgodny z konsensusem, Brent −3%, VIX 15,8 (−11%). Poniedziałek = dzień 1/5; prior „fake Monday / Tuesday low", a w środę FOMC (20:00) z wycenianą <strong>podwyżką</strong> (70–88%) — poniedziałek i wtorek to raczej budowanie range i raidy niż trend.</p>
-          <h3>HTF draw</h3>
-          <ul>
-            <li>Buy-side: PDH 29 499,5 (piątkowy szczyt), wyżej PWH — <strong>brak danych</strong> (Yahoo history: blokada pobrania). Z tygodniowego −0,5% i czwartkowego close 29 135 wynika, że szczyt tygodnia leży nad 29 500 (orientacyjnie 29 650–29 900; do potwierdzenia o 15:00).</li>
-            <li>Sell-side: PDL 29 040,5 (piątkowy dołek; po czterech dniach spadków najpewniej także dołek tygodnia). Niżej: brak danych.</li>
-            <li>Cena 29 387 = premium zakresu piątku (mid 29 270), ale discount względem szczytu tygodnia. Bardziej prawdopodobny cel: <strong>góra</strong> — 29 499,5 i płynność nad nim, bo piątkowe odwrócenie zamknęło się z acceptance nad 29 135, a górny extreme nie został dotknięty.</li>
-          </ul>
-          <h3>Flagi</h3>
-          <ul>
-            <li>Target zabrany? <strong>NIE</strong> — piątek zabrał dołek (29 040,5) i wrócił (sweep dołu + acceptance nad czwartkowym close); 29 499,5 czeka. Status Azji/Londynu: do potwierdzenia o 15:00 (Globex od 00:00 PL).</li>
-            <li>Sweep vs acceptance: jeśli Azja/Londyn wybiją 29 499,5 i zamkną się nad (1h) — continuation; wybicie i powrót pod 29 450 — sweep, szukaj odwrócenia w NY.</li>
-          </ul>
-          <h3>Plan na NY (poniedziałek)</h3>
-          <ul>
-            <li><strong>Bazowo continuation w górę</strong>, dopóki 29 499,5 nie zostanie zabrane przed 15:30. Warunek w 15:50–16:10: raid pod London L / Asia L (albo pod 29 270), CISD w górę z displacement, wejście z FVG; cel 29 499,5, potem płynność nad PWH. RR ≥ 2:1 albo pass.</li>
-            <li><strong>Reversal</strong>, jeśli Azja/Londyn zrobią większość ruchu i zabiorą 29 499,5 (lub PWH) przed NY: finalny raid nad extreme w 15:30–16:10 + SMT (ES/YM) + CISD w dół → cel 29 270, potem 29 040,5.</li>
-            <li><strong>No trade</strong>: cena 29 200–29 420 bez raidu; chaos przed FOMC.</li>
-            <li>Unieważnienie biasu LONG: acceptance (zamknięcia 1h) pod 29 040,5.</li>
-          </ul>
-          <h3>Co w tym tygodniu może zabrać poziomy</h3>
-          <p>Pon: brak dużych danych USA. Wt 15.09: FOMC dzień 1. Śr 16.09: sprzedaż detaliczna 14:30, <strong>FOMC 20:00 + dot plot, Powell 20:30</strong>, wyniki Lennar. Czw 17.09: pozwolenia/rozpoczęcia budów i Philly Fed 14:30. Pt 18.09: produkcja przemysłowa 15:15, wygaśnięcie NQU26. Tydzień FOMC z ryzykiem podwyżki — limit 4 trade'y / 3 SL obowiązuje szczególnie w środę.</p>
-          <p class="src">Źródła: Yahoo Finance NQ=F (quote, 11.09 22:59 PL), TradingView NQ1!, AP/ABC News (indeksy 11.09), stockmarketwatch.com, TradingKey (kalendarz). Yahoo history NQ=F: brak danych (blokada pobrania) — PWH/PWL do uzupełnienia o 15:00.</p>
-        </div>
-      </section>
-
-      <section class="card bias xau" id="xau">
-        <header>
-          <span class="eyebrow">Złoto · XAUUSD</span>
-          <h2>Bias XAUUSD</h2>
-          <span id="xau-dir" class="dir dir-short">SHORT</span>
-          <span class="meta" id="xau-meta">XAU/USD 4 348,4 o 23:50 PL (zamkn. pt.)</span>
-        </header>
-        <div class="body" id="xau-body">
-          <p><strong>Bias na poniedziałek.</strong> Spot otwiera się o 00:00 PL; poziomy z piątkowego zamknięcia 4 348,4 (odczyt 23:50 PL, niedziela). Asia H/L i London H/L uzupełni aktualizacja 15:00.</p>
-          <h3>Struktura</h3>
-          <p>1D: trend spadkowy od 25.08 (4 696) — niższy szczyt 4 514 (4.09) i dołki 4 283 (2.09) / 4 298 (11.09); range 4 283–4 514, cena 4 348 w dolnej trzeciej (discount; mid 4 399). Tydzień 7–11.09: PWH 4 443 (wt., 03:00–07:00 PL), PWL 4 298 (pt., 11:00–15:00 PL), zamknięcie −1,8% w/w. 4h: seria niższych szczytów 4 443 → 4 433 → 4 430 → 4 404; piątek: sweep 4 298 bez zabrania 4 283, odbicie do 4 404 w NY (15:00–19:00 PL) i zejście do 4 348 — odbicie sprzedane w połowie. 1h: konsolidacja 4 340–4 370 w końcówce piątku. ATR14 (1D) ≈ 65–70 USD.</p>
-          <h3>Płynność</h3>
-          <ul>
-            <li>Buy-side: PDH 4 403,8, PWH 4 443,2, dalej 4 514 (szczyt poprzedniego tygodnia; opór 4 510–4 535 z MA200 wg FXStreet).</li>
-            <li>Sell-side: PDL = PWL 4 297,9 i 4 283,2 (2.09) — para „equal lows" ~15 USD od siebie, najbliższy niezabrany HTF draw; niżej 4 270 (MA50) i 4 200.</li>
-          </ul>
-          <h3>Dolar, rentowności, kalendarz</h3>
-          <p>10Y USA 4,96% (najwyżej od XI 2023), 2Y 4,59%; rynek wycenia podwyżkę Fed 16.09 na 70–88% (PPI 5,4% r/r vs 5,3% oczek., CPI 3,4%). EUR/USD 1,1599 (tydzień 1,1569–1,1654, płasko), USD/JPY 153,6 (spadek z 156,2 — dolar słabszy do jena; obraz mieszany). DXY: brak danych (odczyt niedostępny w tym uruchomieniu). Geopolityka: eskalacja USA–Iran (atak na tankowce, odwet), WTI ~100 USD — wsparcie dla złota, ale rentowności dotąd wygrywają.</p>
-          <p>GC=F: brak danych Yahoo (blokada pobrania); zamknięcie piątku wg stockmarketwatch ≈ 4 389,7 (−0,4%), zakres dnia i miesiąc kontraktu: brak danych.</p>
-          <h3>Plan (poniedziałek)</h3>
-          <ul>
-            <li><strong>SHORT</strong> (lean): sprzedaż odbić w 4 380–4 404 (PDH) po raidzie i CISD w dół w London KZ lub 15:50–16:10; cel 4 298 → 4 283 (equal lows). RR liczyć od wejścia do 4 298.</li>
-            <li>LONG tylko po zabraniu 4 283 z odrzuceniem (sweep + CISD w górę, SMT na srebrze) — cel 4 350–4 404.</li>
-            <li>Unieważnienie SHORT: acceptance 4h nad 4 443 (PWH). No trade: 4 330–4 370 bez raidu. W środę 20:00 FOMC — bez pozycji przez decyzję.</li>
-          </ul>
-          <p class="src">Źródła: Twelve Data XAU/USD (1D/4h/1h, ATR14), FXStreet (Gold weekly forecast, 11.09), stockmarketwatch.com (GC).</p>
-        </div>
-      </section>
-
-      <section class="card" id="ny-update">
-        <header>
-          <span class="eyebrow">Przed otwarciem NY</span>
-          <h2>Aktualizacja 15:00</h2>
-          <span class="meta" id="ny-meta">—</span>
-        </header>
-        <div class="body" id="ny-body">
-          <p class="empty">London H/L, status PDH/PDL, reakcja na dane z 14:30 i zaktualizowany wniosek continuation / reversal / no trade — w dni robocze o 15:00.</p>
-        </div>
-      </section>
-
-      <section class="card" id="wydarzenia">
-        <header>
-          <span class="eyebrow">Ostatnie 24h</span>
-          <h2>Kluczowe wydarzenia</h2>
-        </header>
-        <div class="body" id="wydarzenia-body">
-          <ul>
-            <li><strong>CPI USA (sierpień) 3,4% r/r, 0,4% m/m, core 2,4%</strong> — zgodnie z konsensusem. Wall Street w piątek: S&amp;P 500 7 656,98 (+0,9%), Dow 52 573 (+1,0%), Nasdaq 26 333 (+1,0%); tydzień: −0,8% / −1,6% / −0,7%. Dlaczego ważne: ulga dla NQ, ale podwyżka Fed nadal wyceniana — środowy dot plot rozstrzygnie.</li>
-            <li><strong>PPI 5,4% r/r (oczek. 5,3%), 10Y 4,96%</strong> — najwyżej od XI 2023; 2Y 4,59% (najwyżej od VII 2024). Wycena podwyżki 16.09: 70–88%. Dlaczego: rentowności to główny hamulec dla złota i wycen tech.</li>
-            <li><strong>Bliski Wschód</strong>: atak USA na irańskie tankowce i odwet Iranu; WTI ~100 USD (pt. −2,3%), Brent −3% na doniesieniach o negocjacjach. Dlaczego: ropa → inflacja → Fed; dla złota safe-haven kontra rentowności; na GPW Grupa Azoty −8,4% (gaz TTF 81 EUR/MWh).</li>
-            <li><strong>GPW: WIG20 4 139,25 (+0,74%)</strong>, obroty 3,56 mld zł; rekord wszech czasów 4 172,36 z wtorku 8.09; WIG-Banki +0,8% po konferencji prezesa NBP (brak zmian stóp). Dlaczego: WIG20 tuż pod ATH — 4 172 to najbliższy buy-side draw, a FOMC może go zabrać albo zanegować.</li>
-            <li><strong>VIX 15,84 (−11%)</strong> — kompresja zmienności przed FOMC. Dlaczego: niski VIX + tydzień Fed = ryzyko ekspansji zakresu w środę.</li>
-            <li><strong>Insiderzy sprzedają</strong>: Form 4 z 10–11.09 — sprzedaże po ~5–6 mln USD w Natera (NTRA, założyciel Rabinowitz, trzy transakcje ≈14,5 mln USD łącznie), Warner Bros. Discovery (WBD), Hinge Health (HNGE), Alignment Healthcare (ALHC), SPAI. Dlaczego: podaż insiderów przy wysokich rentownościach — brak kontr-zakupów po stronie kupna.</li>
-            <li><strong>M&amp;A</strong>: Copart → ACV Auctions 1,9 mld USD gotówką (ACVA +44%), Patient Square → Premier 2,6 mld, Bending Spoons → Miro 1,355 mld, Analog Devices → Alif 1,35 mld. Dlaczego: apetyt na przejęcia mimo stóp — wsparcie dla small/mid capów.</li>
-          </ul>
-          <p class="src">Źródła: AP/ABC News, stockmarketwatch.com, FXStreet, Bankier.pl (11.09), Benzinga Deal Dispatch, FMP Form 4.</p>
-        </div>
-      </section>
-
-      <section class="card" id="zakupy">
-        <header>
-          <span class="eyebrow">Kto kupuje za miliony</span>
-          <h2>Największe zakupy</h2>
-        </header>
-        <div class="body" id="zakupy-body">
-          <p><strong>Brak zakupów ≥ 500 tys. USD w dostępnych danych.</strong> FMP latest-insider-trade (strona 0, 100 zgłoszeń z 11.09): 63 sprzedaże, tylko 8 zakupów — wszystkie poniżej 35 tys. USD (GPUS, MGX, FLD, ALP). Strona 1 oraz zakupy polityków: brak danych (FMP ACCESS DENIED — plan). 13D/13G i skupy: wyszukiwarka zwróciła jedynie trackery bez konkretnych zgłoszeń z 11–13.09.</p>
-          <div class="tablewrap">
-          <table class="kv">
-            <tr><th>Kto</th><th>Spółka</th><th>Typ</th><th class="num">Wartość</th><th>Data</th><th>Zgłoszenie</th></tr>
-            <tr><td>Milton Ault III, Executive Chairman</td><td>Hyperscale Data (GPUS)</td><td>insider</td><td class="num">33 652 USD</td><td>9–11.09</td><td><a href="https://www.sec.gov/Archives/edgar/data/896493/000121465926011648/0001214659-26-011648-index.htm">Form 4</a></td></tr>
-            <tr><td>Laurence Reid, dyrektor</td><td>Metagenomi (MGX)</td><td>insider</td><td class="num">23 400 USD</td><td>9.09</td><td><a href="https://www.sec.gov/Archives/edgar/data/1785279/000119312526389550/0001193125-26-389550-index.htm">Form 4</a></td></tr>
-            <tr><td>Arlen S.A. (spółka)</td><td>Prabos plus (CZ, 60%)</td><td>przejęcie</td><td class="num">6,4 mln EUR</td><td>9.09</td><td><a href="https://www.stockwatch.pl/wiadomosci/fuzje-i-przejecia-spolek-gieldowych">StockWatch</a></td></tr>
-          </table>
-          </div>
-          <p>Wniosek: w ostatnich 48h po stronie kupna dominują korporacje (M&amp;A — sekcja niżej), a insiderzy w USA niemal wyłącznie sprzedają (biotech/healthcare: NTRA, HNGE, ALHC).</p>
-        </div>
-      </section>
-
-      <section class="card" id="transakcje">
-        <header>
-          <span class="eyebrow">M&amp;A i duże pakiety</span>
-          <h2>Fuzje i przejęcia</h2>
-        </header>
-        <div class="body" id="transakcje-body">
-          <ul>
-            <li><strong>Copart (CPRT) → ACV Auctions (ACVA)</strong> — 1,9 mld USD gotówką, ogłoszone 11.09; ACVA z 7,22 na 10,41 USD (+44%), CPRT −6,5% w dwa dni (32,03 → 29,95). Premia: ok. 44% do kursu z 10.09 (dokładna cena za akcję: brak danych).</li>
-            <li><strong>Patient Square Capital → Premier Inc.</strong> — 2,6 mld USD, delisting (go-private); premia: brak danych.</li>
-            <li><strong>Bending Spoons → Miro</strong> — 1,355 mld USD gotówką, zamknięcie Q4 2026 (11.09).</li>
-            <li><strong>Analog Devices → Alif Semiconductor</strong> — 1,35 mld USD gotówką, zamknięcie do końca 2026 (11.09).</li>
-            <li><strong>Constellation Energy → RISEC Holdings</strong> — 715 mln USD; <strong>Chime → Stride Bank</strong> — 590 mln USD (H1 2027); <strong>John Marshall Bancorp → Eagle Financial</strong> — 253 mln USD w akcjach.</li>
-            <li><strong>Polska</strong>: Polimex Mostostal, PGZ, HSW i ARP — porozumienie o połączeniu Jelcz i RFK (finalizacja do 30.06.2027, 9.09); Mabion — due diligence fabryki API w USA (11.09). Wezwań na GPW w dniach 7–13.09: brak.</li>
-          </ul>
-          <p class="src">Źródła: Benzinga Deal Dispatch (11.09), Fierce Healthcare, StockTitan (8-K CPRT), Twelve Data (kursy), StockWatch.pl.</p>
-        </div>
-      </section>
-
-      <section class="card" id="politycy">
-        <header>
-          <span class="eyebrow">Ujawnienia z Kongresu</span>
-          <h2>Transakcje polityków</h2>
-        </header>
-        <div class="body" id="politycy-body">
-          <p><strong>Brak danych za ostatnie 3 dni</strong>: FMP house-latest / senate-latest zwróciły ACCESS DENIED (plan), a wyszukiwarka nie wskazała zgłoszeń z 10–13.09. Ostatnie szeroko opisane transakcje Pelosi pochodzą z ujawnienia 26.06 (opcje call INTC 1–5 mln USD i UBER 0,5–1 mln USD, transakcje 29.05). Zgłoszenia na bieżąco: <a href="https://disclosures-clerk.house.gov/FinancialDisclosure">Clerk Izby (PTR)</a>, <a href="https://efdsearch.senate.gov/search/">eFD Senatu</a>.</p>
-          <div class="tablewrap">
-          <table class="kv">
-            <tr><th>Polityk</th><th>Spółka</th><th>Typ</th><th class="num">Kwota</th><th>Transakcja</th><th>Ujawnienie</th><th>Dokument</th></tr>
-            <tr><td>Nancy Pelosi (D-CA)</td><td>Intel (INTC) — 200 call, strike 50, wyg. 19.03.2027</td><td>zakup opcji</td><td class="num">1–5 mln USD</td><td>29.05.2026</td><td>26.06.2026</td><td><a href="https://disclosures-clerk.house.gov/FinancialDisclosure">PTR</a></td></tr>
-            <tr><td>Nancy Pelosi (D-CA)</td><td>Uber (UBER) — 200 call, strike 50, wyg. 19.03.2027</td><td>zakup opcji</td><td class="num">0,5–1 mln USD</td><td>29.05.2026</td><td>26.06.2026</td><td><a href="https://disclosures-clerk.house.gov/FinancialDisclosure">PTR</a></td></tr>
-          </table>
-          </div>
-          <p>Komentarz: bez świeżych zgłoszeń nie da się wskazać skupień sektorowych z tego tygodnia; ostatnie znane pozycje Pelosi to półprzewodniki i platformy (INTC, UBER).</p>
-        </div>
-      </section>
-
-      <section class="card" id="spolki">
-        <header>
-          <span class="eyebrow">Warte przyjrzenia się</span>
-          <h2>Pomysły na spółki</h2>
-        </header>
-        <div class="body" id="spolki-body">
-          <h3>Copart (CPRT, Nasdaq) — 29,95 USD (11.09)</h3>
-          <p>Teza: rynek ukarał Copart za zakup ACV Auctions (1,9 mld USD gotówką) — kurs −6,5% w dwa dni — choć spółka wchodzi z pozycji lidera aukcji pojazdów powypadkowych w hurtowy obrót dealerski, płacąc z własnej gotówki. Fosa: sieć placów i licencji (bariera regulacyjna), efekt sieciowy kupujący–ubezpieczyciel, marża operacyjna z górnej półki sektora. Wycena: brak danych (Twelve Data statistics wymaga wyższego planu; limit wyszukiwań wyczerpany) — historycznie premia do rynku, więc sprawdź P/E przed decyzją. Katalizator: sezon huraganów (wolumeny salvage), pierwsze synergie po zamknięciu ACV. Ryzyko: przepłacenie i integracja, cykl cen aut używanych, wysokie stopy.</p>
-          <h3>Budimex (BDX, GPW) — WIG20, +1,84% w piątek</h3>
-          <p>Teza: największy wykonawca infrastruktury w Polsce z portfelem opartym o KPO, energetykę i kontrakty obronne, w tygodniu, gdy WIG20 ustanowił ATH 4 172. Fosa: skala i referencje w przetargach publicznych, historycznie dodatnia pozycja gotówkowa netto i regularna dywidenda. Wycena: brak danych (jak wyżej) — spółka zwyczajowo notowana z premią do sektora, weryfikuj P/E i EV/EBITDA. Katalizator: nowe kontrakty drogowe/kolejowe i energetyczne (CPK, atom, sieci), wyniki Q3. Ryzyko: presja kosztowa, opóźnienia przetargów, wysokie stopy w Polsce (NBP bez cięć).</p>
-          <p class="src">Źródła: Twelve Data (kursy CPRT/ACVA), Benzinga, Bankier.pl. Wycena: brak danych — powód wyżej.</p>
-        </div>
-      </section>
-
-      <section class="card" id="x">
-        <header>
-          <span class="eyebrow">Twoje źródła</span>
-          <h2>Z X</h2>
-          <span class="meta" id="x-meta">—</span>
-        </header>
-        <div class="body" id="x-body">
-          <p class="empty">Najważniejsze wpisy z obserwowanych kont z ostatnich 24h — dopisywane, gdy komputer jest włączony.</p>
-        </div>
-      </section>
-
-    </div>
-
-    <aside class="rail">
-
-      <section class="card" id="poziomy">
-        <header>
-          <span class="eyebrow">Mapa 15:20</span>
-          <h2>Poziomy NQ</h2>
-        </header>
-        <table class="levels" id="levels-table">
-          <tbody>
-            <tr class="group"><th colspan="2">Poprzedni dzień / tydzień</th></tr>
-            <tr><th>PDH</th><td class="num" id="lv-pdh">29 499,50</td></tr>
-            <tr><th>PDL</th><td class="num" id="lv-pdl">29 040,50</td></tr>
-            <tr><th>PWH</th><td class="num" id="lv-pwh">brak danych</td></tr>
-            <tr><th>PWL</th><td class="num" id="lv-pwl">brak danych</td></tr>
-            <tr class="group"><th colspan="2">Sesje dzisiaj</th></tr>
-            <tr><th>Asia H</th><td class="num" id="lv-asia-h">—</td></tr>
-            <tr><th>Asia L</th><td class="num" id="lv-asia-l">—</td></tr>
-            <tr><th>London H</th><td class="num" id="lv-lon-h">—</td></tr>
-            <tr><th>London L</th><td class="num" id="lv-lon-l">—</td></tr>
-            <tr class="group"><th colspan="2">Teraz</th></tr>
-            <tr><th>Cena</th><td class="num" id="lv-now">29 387,00 (22:59 pt.)</td></tr>
-          </tbody>
-        </table>
-        <p class="note" id="levels-source">NQ=F, kontrakt wrzesień 2026 (NQU26, wyg. 18.09) — Yahoo Finance, odczyt 23:50 PL (niedziela; Yahoo pokazuje piątkowe zamknięcie); PDH/PDL = zakres piątku 11.09 (pełna sesja Globex). PWH/PWL: brak danych — historia Yahoo niedostępna w tym uruchomieniu, uzupełni aktualizacja 15:00. Asia/London od 00:00 PL w poniedziałek.</p>
-      </section>
-
-      <section class="card" id="poziomy-xau">
-        <header>
-          <span class="eyebrow">Spot</span>
-          <h2>Poziomy XAUUSD</h2>
-        </header>
-        <table class="levels" id="levels-xau">
-          <tbody>
-            <tr class="group"><th colspan="2">Poprzedni dzień / tydzień</th></tr>
-            <tr><th>PDH</th><td class="num" id="xl-pdh">4 403,8</td></tr>
-            <tr><th>PDL</th><td class="num" id="xl-pdl">4 297,9</td></tr>
-            <tr><th>PWH</th><td class="num" id="xl-pwh">4 443,2</td></tr>
-            <tr><th>PWL</th><td class="num" id="xl-pwl">4 297,9</td></tr>
-            <tr class="group"><th colspan="2">Sesje dzisiaj</th></tr>
-            <tr><th>Asia H</th><td class="num" id="xl-asia-h">—</td></tr>
-            <tr><th>Asia L</th><td class="num" id="xl-asia-l">—</td></tr>
-            <tr><th>London H</th><td class="num" id="xl-lon-h">—</td></tr>
-            <tr><th>London L</th><td class="num" id="xl-lon-l">—</td></tr>
-            <tr class="group"><th colspan="2">Teraz</th></tr>
-            <tr><th>Cena</th><td class="num" id="xl-now">4 348,4 (23:50 nd.)</td></tr>
-          </tbody>
-        </table>
-        <p class="note" id="levels-xau-source">XAU/USD spot — Twelve Data, odczyt 23:50 PL (piątkowe zamknięcie; spot otwiera się 00:00 PL pon.); PDH/PDL = piątek 11.09, PWH/PWL = tydzień 7–11.09. GC=F: brak danych (Yahoo niedostępne; ok. 4 389,7 wg stockmarketwatch).</p>
-      </section>
-
-      <section class="card" id="kalendarz">
-        <header>
-          <span class="eyebrow">Dziś</span>
-          <h2>Kalendarz</h2>
-        </header>
-        <div class="body" id="kalendarz-body">
-          <ul>
-            <li><strong>Pon 14.09</strong> — 00:00 otwarcie Globex i spotu; brak dużych danych USA; wyniki: Dave &amp; Buster's, Kestra Medical.</li>
-            <li>Wt 15.09 — FOMC dzień 1; 14:30 Empire State*; wyniki: Trip.com.</li>
-            <li><strong>Śr 16.09 — 14:30 sprzedaż detaliczna USA (sierpień) i ceny importu; 20:00 decyzja FOMC + dot plot; 20:30 konferencja Powella</strong>; rano CPI UK, 14:30 CPI Kanada; wyniki: Lennar.</li>
-            <li>Czw 17.09 — 13:00 BoE*; 14:30 wnioski o zasiłek, pozwolenia i rozpoczęcia budów, Philly Fed.</li>
-            <li>Pt 18.09 — BoJ (rano)*; 15:15 produkcja przemysłowa USA; <strong>15:30 wygaśnięcie NQU26</strong> (rozliczenie na otwarciu).</li>
-          </ul>
-          <p class="src">Godziny PL wg TradingKey i stockmarketwatch.com; pozycje z * z kalendarza zwyczajowego — do potwierdzenia.</p>
-        </div>
-      </section>
-
-      <section class="card" id="mapa-dnia">
-        <header>
-          <span class="eyebrow">Czas polski</span>
-          <h2>Mapa dnia</h2>
-        </header>
-        <ul class="clock">
-          <li><span class="t">06:00</span><span>Midnight Open</span></li>
-          <li><span class="t">08:00–11:00</span><span>London KZ</span></li>
-          <li><span class="t">14:30</span><span>Dane USA</span></li>
-          <li class="key"><span class="t">15:30</span><span>Cash open</span></li>
-          <li class="key"><span class="t">15:50–16:10</span><span>Kluczowe okno</span></li>
-          <li><span class="t">16:00–17:00</span><span>Silver Bullet</span></li>
-          <li><span class="t">17:30–19:00</span><span>Lunch</span></li>
-          <li><span class="t">20:00–21:00</span><span>PM Silver Bullet</span></li>
-          <li><span class="t">21:00–22:00</span><span>Power Hour</span></li>
-          <li><span class="t">22:00</span><span>Cash close</span></li>
-        </ul>
-        <p class="note" id="dst-note">W tygodniach, gdy USA i Europa mają różny czas letni, cała mapa przesuwa się o godzinę wcześniej (cash open 14:30).</p>
-      </section>
-
-    </aside>
-  </div>
-
-  <footer class="foot">
-    <span>Generowane automatycznie przez Claude z danych Twelve Data, FMP, TradingView i źródeł publicznych. To analiza, nie porada inwestycyjna.</span>
-    <span id="last-updated">Ostatnia zmiana: 2026-09-13 23:58 (brief 8:00)</span>
-  </footer>
-
+<div class="wrap" data-brief-date="2026-09-14" data-ny-update="" data-tv-levels="" data-x-update="" id="brief">
+<header class="masthead">
+<div>
+<h1>Brief <span>rynkowy</span></h1>
+<p class="sub">NQ (futures) · XAUUSD · Polska + USA · <strong>czas polski</strong> · bias to analiza, nie rekomendacja</p>
 </div>
+<div class="datebox">
+<b id="brief-date">poniedziałek, 14 września 2026</b>
+<span id="brief-weekday">Dzień 1/5 tygodnia · profil tygodnia: fake Monday / Tuesday low (prior) · FOMC w środę 20:00 · wydanie nocne 00:10, odświeżenie o 8:00</span>
+</div>
+</header>
+<ul aria-label="Etapy dzisiejszej aktualizacji" class="status">
+<li class="done" id="st-brief"><span class="dot"></span><span class="st-k">Brief 8:00</span><span class="st-v">00:10 (nocne)</span></li>
+<li class="pending" id="st-ny"><span class="dot"></span><span class="st-k">Update 15:00</span><span class="st-v">czeka</span></li>
+<li class="pending" id="st-x"><span class="dot"></span><span class="st-k">Z X</span><span class="st-v">czeka</span></li>
+<li class="pending" id="st-tv"><span class="dot"></span><span class="st-k">TradingView</span><span class="st-v">czeka</span></li>
+</ul>
+<section aria-label="Kokpit: bias i kluczowe poziomy" class="cockpit" hidden="" id="cockpit"></section>
+<div class="grid">
+<div class="main">
+<section class="card bias nq" id="nq">
+<header>
+<span class="eyebrow">E-mini Nasdaq 100 · NQ</span>
+<h2>Bias NQ</h2>
+<span class="dir dir-long" id="nq-dir">LONG</span>
+<span class="profile" id="nq-profile">profil NY: continuation</span>
+<span class="meta" id="nq-meta">NQ=F 29 387,00 o 22:59 PL pt. (odczyt 00:05) · kontrakt wrzesień 2026 (NQU26)</span>
+</header>
+<div class="body" id="nq-body">
+<p><strong>Wydanie nocne (00:10) — bias na poniedziałek 14.09; odświeżenie o 8:00 z pełną Azją.</strong> Globex ruszył o 00:00 PL, ale opóźnione kwotowanie Yahoo (odczyt 00:05) pokazuje jeszcze piątkowe zamknięcie 29 387 — ruch nocny i Asia H/L: brak danych do 8:00. Kontrakt września NQU26 wygasa w piątek 18.09 — jeśli grasz na NQZ26, dolicz spread między kontraktami z własnej platformy do wszystkich poziomów poniżej.</p>
+<h3>Kontekst tygodniowy</h3>
+<p>Tydzień 7–11.09: NQ −0,5% (Nasdaq Composite −0,7%, Dow −1,6%, Russell −2,4%), miesiąc −1,5%. Cztery dni spadków przerwał piątek: open 29 141, dołek 29 040,5 (raid pod czwartkowe zamknięcie 29 135,25), szczyt 29 499,5, close 29 387 (+251,75, +0,86%) — dzienna świeca odwrócenia z zamknięciem w górnej ćwiartce zakresu (mid 29 270). Katalizatory: CPI 3,4% r/r zgodny z konsensusem, Brent −3%, VIX 15,8 (−11%). Poniedziałek = dzień 1/5; prior „fake Monday / Tuesday low", a w środę FOMC (20:00) z wycenianą <strong>podwyżką</strong> (70–88%) — poniedziałek i wtorek to raczej budowanie range i raidy niż trend.</p>
+<h3>HTF draw</h3>
+<ul>
+<li>Buy-side: PDH 29 499,5 (piątkowy szczyt), wyżej PWH — <strong>brak danych</strong> (Yahoo history: blokada pobrania). Z tygodniowego −0,5% i czwartkowego close 29 135 wynika, że szczyt tygodnia leży nad 29 500 (orientacyjnie 29 650–29 900; do potwierdzenia o 15:00).</li>
+<li>Sell-side: PDL 29 040,5 (piątkowy dołek; po czterech dniach spadków najpewniej także dołek tygodnia). Niżej: brak danych.</li>
+<li>Cena 29 387 = premium zakresu piątku (mid 29 270), ale discount względem szczytu tygodnia. Bardziej prawdopodobny cel: <strong>góra</strong> — 29 499,5 i płynność nad nim, bo piątkowe odwrócenie zamknęło się z acceptance nad 29 135, a górny extreme nie został dotknięty.</li>
+</ul>
+<h3>Flagi</h3>
+<ul>
+<li>Target zabrany? <strong>NIE</strong> — piątek zabrał dołek (29 040,5) i wrócił (sweep dołu + acceptance nad czwartkowym close); 29 499,5 czeka. Czy Azja zabrała PDH/PDL: brak danych o 00:05 — do potwierdzenia o 8:00 i 15:00. Weekendowy sygnał ryzyka: kolejny statek trafiony w Cieśninie Ormuz (UKMTO, 13.09) i brak postępu w dyplomacji USA–Iran — złoto otworzyło się ~12 USD niżej, więc pierwszy tydzień otwarcia może być ostrożny.</li>
+<li>Sweep vs acceptance: jeśli Azja/Londyn wybiją 29 499,5 i zamkną się nad (1h) — continuation; wybicie i powrót pod 29 450 — sweep, szukaj odwrócenia w NY.</li>
+</ul>
+<h3>Plan na NY (poniedziałek)</h3>
+<ul>
+<li><strong>Bazowo continuation w górę</strong>, dopóki 29 499,5 nie zostanie zabrane przed 15:30. Warunek w 15:50–16:10: raid pod London L / Asia L (albo pod 29 270), CISD w górę z displacement, wejście z FVG; cel 29 499,5, potem płynność nad PWH. RR ≥ 2:1 albo pass.</li>
+<li><strong>Reversal</strong>, jeśli Azja/Londyn zrobią większość ruchu i zabiorą 29 499,5 (lub PWH) przed NY: finalny raid nad extreme w 15:30–16:10 + SMT (ES/YM) + CISD w dół → cel 29 270, potem 29 040,5.</li>
+<li><strong>No trade</strong>: cena 29 200–29 420 bez raidu; chaos przed FOMC.</li>
+<li>Unieważnienie biasu LONG: acceptance (zamknięcia 1h) pod 29 040,5.</li>
+</ul>
+<h3>Co w tym tygodniu może zabrać poziomy</h3>
+<p>Pon: brak dużych danych USA. Wt 15.09: FOMC dzień 1. Śr 16.09: sprzedaż detaliczna 14:30, <strong>FOMC 20:00 + dot plot, Powell 20:30</strong>, wyniki Lennar. Czw 17.09: pozwolenia/rozpoczęcia budów i Philly Fed 14:30. Pt 18.09: produkcja przemysłowa 15:15, wygaśnięcie NQU26. Tydzień FOMC z ryzykiem podwyżki — limit 4 trade'y / 3 SL obowiązuje szczególnie w środę.</p>
+<p class="src">Źródła: Yahoo Finance NQ=F (quote, odczyt 00:05 PL — ostatnie kwotowanie 11.09 22:59), TradingView NQ1!, AP/ABC News (indeksy 11.09), stockmarketwatch.com, TradingKey (kalendarz), CNBC (Ormuz, 13.09). Yahoo history NQ=F: brak danych (strona zwróciła 404) — PWH/PWL do uzupełnienia o 8:00/15:00.</p>
+</div>
+</section>
+<section class="card bias xau" id="xau">
+<header>
+<span class="eyebrow">Złoto · XAUUSD</span>
+<h2>Bias XAUUSD</h2>
+<span class="dir dir-short" id="xau-dir">SHORT</span>
+<span class="meta" id="xau-meta">XAU/USD 4 336,3 o 00:05 PL</span>
+</header>
+<div class="body" id="xau-body">
+<p><strong>Bias na poniedziałek (wydanie nocne, odświeżenie o 8:00).</strong> Spot otworzył się o 00:00 PL luką w dół: piątkowe zamknięcie 4 348,4 → pierwsza godzina 4 350,8 / 4 325,3, teraz 4 336,3 (00:05). Asia H/L poniżej to dopiero pierwsze minuty; London H/L uzupełni aktualizacja 15:00.</p>
+<h3>Struktura</h3>
+<p>1D: trend spadkowy od 25.08 (4 696) — niższy szczyt 4 514 (4.09) i dołki 4 283 (2.09) / 4 298 (11.09); range 4 283–4 514, cena 4 348 w dolnej trzeciej (discount; mid 4 399). Tydzień 7–11.09: PWH 4 443 (wt., 03:00–07:00 PL), PWL 4 298 (pt., 11:00–15:00 PL), zamknięcie −1,8% w/w. 4h: seria niższych szczytów 4 443 → 4 433 → 4 430 → 4 404; piątek: sweep 4 298 bez zabrania 4 283, odbicie do 4 404 w NY (15:00–19:00 PL) i zejście do 4 348 — odbicie sprzedane w połowie. 1h: konsolidacja 4 340–4 370 w końcówce piątku. ATR14 (1D) ≈ 65–70 USD.</p>
+<h3>Płynność</h3>
+<ul>
+<li>Buy-side: PDH 4 403,8, PWH 4 443,2, dalej 4 514 (szczyt poprzedniego tygodnia; opór 4 510–4 535 z MA200 wg FXStreet).</li>
+<li>Sell-side: PDL = PWL 4 297,9 i 4 283,2 (2.09) — para „equal lows" ~15 USD od siebie, najbliższy niezabrany HTF draw; niżej 4 270 (MA50) i 4 200.</li>
+</ul>
+<h3>Dolar, rentowności, kalendarz</h3>
+<p>10Y USA 4,96% (najwyżej od XI 2023), 2Y 4,59%; rynek wycenia podwyżkę Fed 16.09 na 70–88% (PPI 5,4% r/r vs 5,3% oczek., CPI 3,4%). EUR/USD 1,1597 (tydzień 1,1569–1,1654, płasko), USD/JPY 153,5 (spadek z 156,2 — dolar słabszy do jena; obraz mieszany). DXY: brak danych (odczyt niedostępny w tym uruchomieniu). Geopolityka: USA zniszczyły 5 tankowców IRGC, Iran ostrzelał cele w Jordanii, w sobotę kolejny statek trafiony w Cieśninie Ormuz (UKMTO) przy „nieuchwytnej" dyplomacji; Brent 97–100 USD. Mimo tego złoto otworzyło tydzień niżej — rentowności i podwyżka Fed dotąd ważą więcej niż safe-haven.</p>
+<p>GC=F 4 408,9 (+0,04%), zakres dnia 4 333,0–4 444,8, kontrakt grudzień 2026 (Yahoo, zamknięcie pt. 22:59 PL; odczyt 00:05). Uwaga: futures grudniowe notują ~60 USD nad spotem (contango) — poziomy w tabeli są dla spotu.</p>
+<h3>Plan (poniedziałek)</h3>
+<ul>
+<li><strong>SHORT</strong> (lean): sprzedaż odbić w 4 350–4 404 (luka otwarcia 4 348 → PDH) po raidzie i CISD w dół w London KZ lub 15:50–16:10; cel 4 298 → 4 283 (equal lows). RR liczyć od wejścia do 4 298; jeśli Azja zejdzie pod 4 310 przed Londynem, nie gonić — czekać na retest 4 325–4 348.</li>
+<li>LONG tylko po zabraniu 4 283 z odrzuceniem (sweep + CISD w górę, SMT na srebrze) — cel 4 350–4 404.</li>
+<li>Unieważnienie SHORT: acceptance 4h nad 4 443 (PWH). No trade: 4 330–4 370 bez raidu. W środę 20:00 FOMC — bez pozycji przez decyzję.</li>
+</ul>
+<p class="src">Źródła: Twelve Data XAU/USD (1D/4h/1h, ATR14; odczyt 00:05), Yahoo GC=F, FXStreet (Gold weekly forecast, 11.09), CBS News / CNBC (Iran, 8–13.09).</p>
+</div>
+</section>
+<section class="card" id="ny-update">
+<header>
+<span class="eyebrow">Przed otwarciem NY</span>
+<h2>Aktualizacja 15:00</h2>
+<span class="meta" id="ny-meta">—</span>
+</header>
+<div class="body" id="ny-body">
+<p class="empty">London H/L, status PDH/PDL, reakcja na dane z 14:30 i zaktualizowany wniosek continuation / reversal / no trade — w dni robocze o 15:00.</p>
+</div>
+</section>
+<section class="card" id="wydarzenia">
+<header>
+<span class="eyebrow">Ostatnie 24h</span>
+<h2>Kluczowe wydarzenia</h2>
+</header>
+<div class="body" id="wydarzenia-body">
+<ul>
+<li><strong>CPI USA (sierpień) 3,4% r/r, 0,4% m/m, core 2,4%</strong> — zgodnie z konsensusem. Wall Street w piątek: S&amp;P 500 7 656,98 (+0,9%), Dow 52 573 (+1,0%), Nasdaq 26 333 (+1,0%); tydzień: −0,8% / −1,6% / −0,7%. Dlaczego ważne: ulga dla NQ, ale podwyżka Fed nadal wyceniana — środowy dot plot rozstrzygnie.</li>
+<li><strong>PPI 5,4% r/r (oczek. 5,3%), 10Y 4,96%</strong> — najwyżej od XI 2023; 2Y 4,59% (najwyżej od VII 2024). Wycena podwyżki 16.09: 70–88%. Dlaczego: rentowności to główny hamulec dla złota i wycen tech.</li>
+<li><strong>Bliski Wschód</strong>: USA zniszczyły 5 tankowców IRGC, Iran ostrzelał cele w Jordanii (8.09); w sobotę 13.09 kolejny statek trafiony w Cieśninie Ormuz (UKMTO), perspektywy dyplomacji USA–Iran „nieuchwytne" (CNBC). WTI ~100 USD (pt. −2,3%), Brent −3% w piątek na nadziei na negocjacje. Dlaczego: weekendowa eskalacja może cofnąć piątkową ulgę na otwarciu; ropa → inflacja → Fed; na GPW Grupa Azoty −8,4% (gaz TTF 81 EUR/MWh).</li>
+<li><strong>Otwarcie tygodnia: złoto 4 336 (−12 USD do piątkowego zamknięcia, 00:05 PL)</strong> mimo Ormuz — Dlaczego: potwierdza, że rentowności (10Y 4,96%) i wycena podwyżki Fed ważą więcej niż safe-haven; NQ: brak nocnego kwotowania do 8:00.</li>
+<li><strong>GPW: WIG20 4 139,25 (+0,74%)</strong>, obroty 3,56 mld zł; rekord wszech czasów 4 172,36 z wtorku 8.09; WIG-Banki +0,8% po konferencji prezesa NBP (brak zmian stóp). Dlaczego: WIG20 tuż pod ATH — 4 172 to najbliższy buy-side draw, a FOMC może go zabrać albo zanegować.</li>
+<li><strong>VIX 15,84 (−11%)</strong> — kompresja zmienności przed FOMC. Dlaczego: niski VIX + tydzień Fed = ryzyko ekspansji zakresu w środę.</li>
+<li><strong>Insiderzy sprzedają</strong>: Form 4 z 10–11.09 — sprzedaże po ~5–6 mln USD w Natera (NTRA, założyciel Rabinowitz, trzy transakcje ≈14,5 mln USD łącznie), Warner Bros. Discovery (WBD), Hinge Health (HNGE), Alignment Healthcare (ALHC), SPAI. Dlaczego: podaż insiderów przy wysokich rentownościach — brak kontr-zakupów po stronie kupna.</li>
+<li><strong>M&amp;A</strong>: Copart → ACV Auctions 1,9 mld USD gotówką (ACVA +44%), Patient Square → Premier 2,6 mld, Bending Spoons → Miro 1,355 mld, Analog Devices → Alif 1,35 mld. Dlaczego: apetyt na przejęcia mimo stóp — wsparcie dla small/mid capów.</li>
+</ul>
+<p class="src">Źródła: AP/ABC News, stockmarketwatch.com, FXStreet, Bankier.pl (11.09), CBS News (8.09), CNBC (13.09), Benzinga Deal Dispatch, FMP Form 4, Twelve Data.</p>
+</div>
+</section>
+<section class="card" id="zakupy">
+<header>
+<span class="eyebrow">Kto kupuje za miliony</span>
+<h2>Największe zakupy</h2>
+</header>
+<div class="body" id="zakupy-body">
+<p><strong>Brak zakupów insiderów ≥ 500 tys. USD w dostępnych danych.</strong> FMP latest-insider-trade (strona 0, 100 zgłoszeń z 11.09): 63 sprzedaże, tylko 8 zakupów — wszystkie poniżej 35 tys. USD. Strona 1 i zakupy polityków: brak danych (FMP ACCESS DENIED — plan); OpenInsider: brak danych (pętla przekierowań). Nowe pakiety 13D z 11.09 (HoldingsIntel) — wartości pakietów nieujawnione, procenty poniżej.</p>
+<div class="tablewrap">
+<table class="kv">
+<tr><th>Kto</th><th>Spółka</th><th>Typ</th><th class="num">Wartość</th><th>Data</th><th>Zgłoszenie</th></tr>
+<tr><td>Squadron Capital LLC</td><td>OrthoPediatrics (KIDS) — 23,8%</td><td>fundusz (13D)</td><td class="num">brak danych</td><td>11.09</td><td><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=KIDS&amp;type=SC%2013D">EDGAR</a></td></tr>
+<tr><td>L.I.A. Pure Capital / Leon Recanati</td><td>Evogene (EVGN) — 19,4% / 8,6%</td><td>fundusz (13D)</td><td class="num">brak danych</td><td>11.09</td><td><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=EVGN&amp;type=SC%2013D">EDGAR</a></td></tr>
+<tr><td>Zvi Schreiber, CEO</td><td>Freightos (CRGO) — 6,0%</td><td>insider (13D)</td><td class="num">brak danych</td><td>11.09</td><td><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=CRGO&amp;type=SC%2013D">EDGAR</a></td></tr>
+<tr><td>Milton Ault III, Executive Chairman</td><td>Hyperscale Data (GPUS)</td><td>insider</td><td class="num">33 652 USD</td><td>9–11.09</td><td><a href="https://www.sec.gov/Archives/edgar/data/896493/000121465926011648/0001214659-26-011648-index.htm">Form 4</a></td></tr>
+<tr><td>Laurence Reid, dyrektor</td><td>Metagenomi (MGX)</td><td>insider</td><td class="num">23 400 USD</td><td>9.09</td><td><a href="https://www.sec.gov/Archives/edgar/data/1785279/000119312526389550/0001193125-26-389550-index.htm">Form 4</a></td></tr>
+<tr><td>Arlen S.A. (spółka)</td><td>Prabos plus (CZ, 60%)</td><td>przejęcie</td><td class="num">6,4 mln EUR</td><td>9.09</td><td><a href="https://www.stockwatch.pl/wiadomosci/fuzje-i-przejecia-spolek-gieldowych">StockWatch</a></td></tr>
+</table>
+</div>
+<p>Wniosek: po stronie kupna dominują korporacje (M&amp;A — sekcja niżej) i fundusze w small capach (ortopedia, agro-biotech, logistyka), a insiderzy w USA niemal wyłącznie sprzedają (biotech/healthcare: NTRA, HNGE, ALHC).</p>
+</div>
+</section>
+<section class="card" id="transakcje">
+<header>
+<span class="eyebrow">M&amp;A i duże pakiety</span>
+<h2>Fuzje i przejęcia</h2>
+</header>
+<div class="body" id="transakcje-body">
+<ul>
+<li><strong>Copart (CPRT) → ACV Auctions (ACVA)</strong> — 1,9 mld USD gotówką, ogłoszone 11.09; ACVA z 7,22 na 10,41 USD (+44%), CPRT −6,5% w dwa dni (32,03 → 29,95). Premia: ok. 44% do kursu z 10.09 (dokładna cena za akcję: brak danych).</li>
+<li><strong>Patient Square Capital → Premier Inc.</strong> — 2,6 mld USD, delisting (go-private); premia: brak danych.</li>
+<li><strong>Bending Spoons → Miro</strong> — 1,355 mld USD gotówką, zamknięcie Q4 2026 (11.09).</li>
+<li><strong>Analog Devices → Alif Semiconductor</strong> — 1,35 mld USD gotówką, zamknięcie do końca 2026 (11.09).</li>
+<li><strong>Constellation Energy → RISEC Holdings</strong> — 715 mln USD; <strong>Chime → Stride Bank</strong> — 590 mln USD (H1 2027); <strong>John Marshall Bancorp → Eagle Financial</strong> — 253 mln USD w akcjach.</li>
+<li><strong>Polska</strong>: Polimex Mostostal, PGZ, HSW i ARP — porozumienie o połączeniu Jelcz i RFK (finalizacja do 30.06.2027, 9.09); Mabion — due diligence fabryki API w USA (11.09). Wezwań na GPW w dniach 7–13.09: brak.</li>
+</ul>
+<p class="src">Źródła: Benzinga Deal Dispatch (11.09), Fierce Healthcare, StockTitan (8-K CPRT), Twelve Data (kursy), StockWatch.pl.</p>
+</div>
+</section>
+<section class="card" id="politycy">
+<header>
+<span class="eyebrow">Ujawnienia z Kongresu</span>
+<h2>Transakcje polityków</h2>
+</header>
+<div class="body" id="politycy-body">
+<p><strong>Brak danych za ostatnie 3 dni</strong>: FMP house-latest / senate-latest zwróciły ACCESS DENIED (plan); Trendlyne (405) i Quiver (treść za logowaniem) nie oddały tabel z 8–13.09. Ostatnie szeroko opisane transakcje Pelosi pochodzą z ujawnienia 26.06 (opcje call INTC 1–5 mln USD i UBER 0,5–1 mln USD, transakcje 29.05). Zgłoszenia na bieżąco: <a href="https://disclosures-clerk.house.gov/FinancialDisclosure">Clerk Izby (PTR)</a>, <a href="https://efdsearch.senate.gov/search/">eFD Senatu</a>.</p>
+<div class="tablewrap">
+<table class="kv">
+<tr><th>Polityk</th><th>Spółka</th><th>Typ</th><th class="num">Kwota</th><th>Transakcja</th><th>Ujawnienie</th><th>Dokument</th></tr>
+<tr><td>Nancy Pelosi (D-CA)</td><td>Intel (INTC) — 200 call, strike 50, wyg. 19.03.2027</td><td>zakup opcji</td><td class="num">1–5 mln USD</td><td>29.05.2026</td><td>26.06.2026</td><td><a href="https://disclosures-clerk.house.gov/FinancialDisclosure">PTR</a></td></tr>
+<tr><td>Nancy Pelosi (D-CA)</td><td>Uber (UBER) — 200 call, strike 50, wyg. 19.03.2027</td><td>zakup opcji</td><td class="num">0,5–1 mln USD</td><td>29.05.2026</td><td>26.06.2026</td><td><a href="https://disclosures-clerk.house.gov/FinancialDisclosure">PTR</a></td></tr>
+</table>
+</div>
+<p>Komentarz: bez świeżych zgłoszeń nie da się wskazać skupień sektorowych z tego tygodnia; ostatnie znane pozycje Pelosi to półprzewodniki i platformy (INTC, UBER).</p>
+</div>
+</section>
+<section class="card" id="spolki">
+<header>
+<span class="eyebrow">Warte przyjrzenia się</span>
+<h2>Pomysły na spółki</h2>
+</header>
+<div class="body" id="spolki-body">
+<h3>Copart (CPRT, Nasdaq) — 29,95 USD (11.09)</h3>
+<p>Teza: rynek ukarał Copart za zakup ACV Auctions (1,9 mld USD gotówką) — kurs −6,5% w dwa dni — choć spółka wchodzi z pozycji lidera aukcji pojazdów powypadkowych w hurtowy obrót dealerski, płacąc z własnej gotówki. Fosa: sieć placów i licencji (bariera regulacyjna), efekt sieciowy kupujący–ubezpieczyciel, marża operacyjna z górnej półki sektora. Wycena: brak danych (Twelve Data statistics wymaga wyższego planu; limit wyszukiwań wyczerpany) — historycznie premia do rynku, więc sprawdź P/E przed decyzją. Katalizator: sezon huraganów (wolumeny salvage), pierwsze synergie po zamknięciu ACV. Ryzyko: przepłacenie i integracja, cykl cen aut używanych, wysokie stopy.</p>
+<h3>Budimex (BDX, GPW) — WIG20, +1,84% w piątek</h3>
+<p>Teza: największy wykonawca infrastruktury w Polsce z portfelem opartym o KPO, energetykę i kontrakty obronne, w tygodniu, gdy WIG20 ustanowił ATH 4 172. Fosa: skala i referencje w przetargach publicznych, historycznie dodatnia pozycja gotówkowa netto i regularna dywidenda. Wycena: brak danych (jak wyżej) — spółka zwyczajowo notowana z premią do sektora, weryfikuj P/E i EV/EBITDA. Katalizator: nowe kontrakty drogowe/kolejowe i energetyczne (CPK, atom, sieci), wyniki Q3. Ryzyko: presja kosztowa, opóźnienia przetargów, wysokie stopy w Polsce (NBP bez cięć).</p>
+<p class="src">Źródła: Twelve Data (kursy CPRT/ACVA), Benzinga, Bankier.pl. Wycena: brak danych — powód wyżej.</p>
+</div>
+</section>
+<section class="card" id="x">
+<header>
+<span class="eyebrow">Twoje źródła</span>
+<h2>Z X</h2>
+<span class="meta" id="x-meta">—</span>
+</header>
+<div class="body" id="x-body">
+<p class="empty">Najważniejsze wpisy z obserwowanych kont z ostatnich 24h — dopisywane, gdy komputer jest włączony.</p>
+</div>
+</section>
+</div>
+<aside class="rail">
+<section class="card" id="tv">
+<header>
+<span class="eyebrow">Z Twojego komputera</span>
+<h2>TradingView</h2>
+<span class="meta" id="tv-meta">—</span>
+</header>
+<div class="shots">
+<figure class="shot" id="tv-nq">
+<img alt="Wykres NQ z TradingView" hidden="" id="tv-nq-img" src=""/>
+<p class="ph">NQ · zrzut wykresu pojawi się po odczycie z TradingView (15:00)</p>
+<figcaption id="tv-nq-meta"><b>NQ1!</b> · czeka</figcaption>
+</figure>
+<figure class="shot" id="tv-xau">
+<img alt="Wykres XAUUSD z TradingView" hidden="" id="tv-xau-img" src=""/>
+<p class="ph">XAUUSD · zrzut wykresu pojawi się po odczycie z TradingView (15:00)</p>
+<figcaption id="tv-xau-meta"><b>XAUUSD</b> · czeka</figcaption>
+</figure>
+</div>
+</section>
+<section class="card" id="poziomy">
+<header>
+<span class="eyebrow">Mapa 15:20</span>
+<h2>Poziomy NQ</h2>
+</header>
+<table class="levels" id="levels-table">
+<tbody>
+<tr class="group"><th colspan="2">Poprzedni dzień / tydzień</th></tr>
+<tr><th>PDH</th><td class="num" id="lv-pdh">29 499,50</td></tr>
+<tr><th>PDL</th><td class="num" id="lv-pdl">29 040,50</td></tr>
+<tr><th>PWH</th><td class="num" id="lv-pwh">brak danych</td></tr>
+<tr><th>PWL</th><td class="num" id="lv-pwl">brak danych</td></tr>
+<tr class="group"><th colspan="2">Sesje dzisiaj</th></tr>
+<tr><th>Asia H</th><td class="num" id="lv-asia-h">brak danych (do 00:05)</td></tr>
+<tr><th>Asia L</th><td class="num" id="lv-asia-l">brak danych (do 00:05)</td></tr>
+<tr><th>London H</th><td class="num" id="lv-lon-h">—</td></tr>
+<tr><th>London L</th><td class="num" id="lv-lon-l">—</td></tr>
+<tr class="group"><th colspan="2">Teraz</th></tr>
+<tr><th>Cena</th><td class="num" id="lv-now">29 387,00 (22:59 pt.; odczyt 00:05)</td></tr>
+</tbody>
+</table>
+<p class="note" id="levels-source">NQ=F, kontrakt wrzesień 2026 (NQU26, wyg. 18.09) — Yahoo Finance, odczyt 00:05 PL (kwotowanie opóźnione, ostatnie z 11.09 22:59 — Globex ruszył 00:00); PDH/PDL = zakres piątku 11.09 (pełna sesja Globex). PWH/PWL: brak danych — historia Yahoo zwróciła 404; Asia H/L i PWH/PWL uzupełni brief 8:00.</p>
+</section>
+<section class="card" id="poziomy-xau">
+<header>
+<span class="eyebrow">Spot</span>
+<h2>Poziomy XAUUSD</h2>
+</header>
+<table class="levels" id="levels-xau">
+<tbody>
+<tr class="group"><th colspan="2">Poprzedni dzień / tydzień</th></tr>
+<tr><th>PDH</th><td class="num" id="xl-pdh">4 403,8</td></tr>
+<tr><th>PDL</th><td class="num" id="xl-pdl">4 297,9</td></tr>
+<tr><th>PWH</th><td class="num" id="xl-pwh">4 443,2</td></tr>
+<tr><th>PWL</th><td class="num" id="xl-pwl">4 297,9</td></tr>
+<tr class="group"><th colspan="2">Sesje dzisiaj</th></tr>
+<tr><th>Asia H</th><td class="num" id="xl-asia-h">4 350,8 (do 00:05)</td></tr>
+<tr><th>Asia L</th><td class="num" id="xl-asia-l">4 325,3 (do 00:05)</td></tr>
+<tr><th>London H</th><td class="num" id="xl-lon-h">—</td></tr>
+<tr><th>London L</th><td class="num" id="xl-lon-l">—</td></tr>
+<tr class="group"><th colspan="2">Teraz</th></tr>
+<tr><th>Cena</th><td class="num" id="xl-now">4 336,3 (00:05)</td></tr>
+</tbody>
+</table>
+<p class="note" id="levels-xau-source">XAU/USD spot — Twelve Data, odczyt 00:05 PL; PDH/PDL = piątek 11.09, PWH/PWL = tydzień 7–11.09, Asia = pierwsze minuty od 00:00; GC=F 4 408,9 (grudzień 2026, zamknięcie pt.).</p>
+</section>
+<section class="card" id="kalendarz">
+<header>
+<span class="eyebrow">Dziś</span>
+<h2>Kalendarz</h2>
+</header>
+<div class="body" id="kalendarz-body">
+<ul>
+<li><strong>Pon 14.09 (dziś)</strong> — 00:00 otwarcie Globex i spotu; 06:00 Midnight Open; 08:00–11:00 London KZ; 09:00 GPW; brak dużych danych USA; 15:30 cash open, 15:50–16:10 kluczowe okno; GPW: raporty półroczne GPW S.A. i Cloud Technologies; USA po sesji: Dave &amp; Buster's, Kestra Medical.</li>
+<li>Wt 15.09 — FOMC dzień 1; 14:30 Empire State*; wyniki: Trip.com; GPW: PGE, Murapol, Ambra.</li>
+<li><strong>Śr 16.09 — 14:30 sprzedaż detaliczna USA (sierpień) i ceny importu; 20:00 decyzja FOMC + dot plot; 20:30 konferencja Powella</strong>; rano CPI UK, 14:30 CPI Kanada; wyniki: Lennar; GPW: Celon Pharma, Huuuge, Unimot.</li>
+<li>Czw 17.09 — 13:00 BoE*; 14:30 wnioski o zasiłek, pozwolenia i rozpoczęcia budów, Philly Fed; GPW: Allegro, LPP, Auto Partner, Echo, Ryvu, Selvita.</li>
+<li>Pt 18.09 — BoJ (rano)*; 15:15 produkcja przemysłowa USA; <strong>15:30 wygaśnięcie NQU26</strong> (rozliczenie na otwarciu); GPW: Newag, Amica.</li>
+</ul>
+<p class="src">Godziny PL wg TradingKey i stockmarketwatch.com; GPW wg Strefy Inwestorów (46 raportów półrocznych w tym tygodniu); pozycje z * z kalendarza zwyczajowego — do potwierdzenia.</p>
+</div>
+</section>
+<section class="card" id="mapa-dnia">
+<header>
+<span class="eyebrow">Czas polski</span>
+<h2>Mapa dnia</h2>
+</header>
+<ul class="clock">
+<li><span class="t">06:00</span><span>Midnight Open</span></li>
+<li><span class="t">08:00–11:00</span><span>London KZ</span></li>
+<li><span class="t">14:30</span><span>Dane USA</span></li>
+<li class="key"><span class="t">15:30</span><span>Cash open</span></li>
+<li class="key"><span class="t">15:50–16:10</span><span>Kluczowe okno</span></li>
+<li><span class="t">16:00–17:00</span><span>Silver Bullet</span></li>
+<li><span class="t">17:30–19:00</span><span>Lunch</span></li>
+<li><span class="t">20:00–21:00</span><span>PM Silver Bullet</span></li>
+<li><span class="t">21:00–22:00</span><span>Power Hour</span></li>
+<li><span class="t">22:00</span><span>Cash close</span></li>
+</ul>
+<p class="note" id="dst-note">W tygodniach, gdy USA i Europa mają różny czas letni, cała mapa przesuwa się o godzinę wcześniej (cash open 14:30).</p>
+</section>
+</aside>
+</div>
+<footer class="foot">
+<span>Generowane automatycznie przez Claude z danych Twelve Data, FMP, Yahoo Finance, TradingView i źródeł publicznych. To analiza, nie porada inwestycyjna.</span>
+<span id="last-updated">Ostatnia zmiana: 2026-09-14 00:10 (brief 8:00)</span>
+</footer>
+</div>
+<script>
+(function () {
+  // Kokpit: zbiera bias i poziomy z istniejących elementów strony (te same id, które wypełnia zadanie).
+  function txt(id) { var e = document.getElementById(id); return e ? e.textContent.replace(/\s+/g, ' ').trim() : ''; }
+  function cls(id) { var e = document.getElementById(id); return e ? e.className : ''; }
+  function dirOf(c) { return /dir-long/.test(c) ? 'long' : /dir-short/.test(c) ? 'short' : 'neutral'; }
+  function el(tag, className, text) {
+    var n = document.createElement(tag);
+    if (className) n.className = className;
+    if (text !== undefined) n.textContent = text;
+    return n;
+  }
+  function isEmpty(v) { return !v || v === '—' || v === '-' || /^brak/i.test(v); }
+  function splitNow(v) {
+    var m = v.match(/^(.*?)\s*(\(.*\))\s*$/);
+    return m ? { price: m[1], when: m[2] } : { price: v, when: '' };
+  }
+  function tile(o) {
+    var t = el('div', 'tile ' + o.dcls);
+    var head = el('div', 't-head');
+    head.appendChild(el('span', 't-name', o.name));
+    head.appendChild(el('span', 't-sub', o.sub));
+    var badge = el('span', 'dir dir-' + o.dcls, o.dir || 'brak danych');
+    head.appendChild(badge);
+    if (o.profile) head.appendChild(el('span', 't-profile', o.profile));
+    t.appendChild(head);
+    var now = splitNow(o.now || '');
+    var p = el('div', 't-now', isEmpty(now.price) ? '—' : now.price);
+    if (now.when) p.appendChild(el('small', '', now.when));
+    t.appendChild(p);
+    var dl = el('dl', 't-levels');
+    o.rows.forEach(function (r) {
+      var box = el('div');
+      box.appendChild(el('dt', '', r[0]));
+      var dd = el('dd', isEmpty(r[1]) ? 'muted' : '', isEmpty(r[1]) ? '—' : r[1]);
+      box.appendChild(dd);
+      dl.appendChild(box);
+    });
+    t.appendChild(dl);
+    return t;
+  }
+  var host = document.getElementById('cockpit');
+  if (!host) return;
+  var nq = {
+    name: 'NQ', sub: 'E-mini Nasdaq 100', dir: txt('nq-dir'), dcls: dirOf(cls('nq-dir')), profile: txt('nq-profile'), now: txt('lv-now'),
+    rows: [['PDH', txt('lv-pdh')], ['PDL', txt('lv-pdl')], ['PWH', txt('lv-pwh')], ['PWL', txt('lv-pwl')],
+           ['Asia H', txt('lv-asia-h')], ['Asia L', txt('lv-asia-l')], ['London H', txt('lv-lon-h')], ['London L', txt('lv-lon-l')]]
+  };
+  var xau = {
+    name: 'XAUUSD', sub: 'Złoto spot', dir: txt('xau-dir'), dcls: dirOf(cls('xau-dir')), profile: '', now: txt('xl-now'),
+    rows: [['PDH', txt('xl-pdh')], ['PDL', txt('xl-pdl')], ['PWH', txt('xl-pwh')], ['PWL', txt('xl-pwl')],
+           ['Asia H', txt('xl-asia-h')], ['Asia L', txt('xl-asia-l')], ['London H', txt('xl-lon-h')], ['London L', txt('xl-lon-l')]]
+  };
+  host.textContent = '';
+  host.appendChild(tile(nq));
+  host.appendChild(tile(xau));
+  host.hidden = false;
+})();
+</script>
 
 
 </body>
